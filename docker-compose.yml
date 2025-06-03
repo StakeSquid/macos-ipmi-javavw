@@ -1,0 +1,12 @@
+services:
+  ipmi-java:
+    build: .
+    platform: linux/amd64
+    ports:
+      - "6080:6080"
+    volumes:
+      - ./jnlp:/data
+    environment:
+      - USER=root
+    container_name: ipmi-javaws
+    tty: true
